@@ -4,76 +4,76 @@
 ### 1:51 Qué es Node.JS y V8
 ### 4:18 Orientado a Eventos
 ### 5:27 ¿Por qué aprender Node.js? 6 Razones
-        demanda, stack (mern =>(Mongo, Esxpress, React, Node)), productividad, creacion de apis, scraping
-        facil, escalable, rapido y facil de desplegar.
+demanda, stack (mern =>(Mongo, Esxpress, React, Node)), productividad, creacion de apis, scraping
+facil, escalable, rapido y facil de desplegar.
 ### 9:44 Historia
-        desde 2009 en funcionamiento, 2015 parte de open source
+desde 2009 en funcionamiento, 2015 parte de open source
 ### 10:54 Requisitos Para este curso (javascript)
-        expresiones, tipos de datos, variables, funciones, bucles, arrays, etc.
+expresiones, tipos de datos, variables, funciones, bucles, arrays, etc.
 ### 11:57 2 Formas de Instalar Node.JS
-        version estable lts «Long Term Support» en inglés, lo que se traduce al español como «Soporte a Largo Plazo»
-        desventaja de NodeJS lts solo se instala una sola version.
-        *el instalador NVM  manejador de versiones de node.js compatible con diferentes plataformas.
-        *FNM (fast and simple node.js version version manager,,build in Rust), se debe de ejecutar Rust (https://github.com/Schniz/fnm)
+version estable lts «Long Term Support» en inglés, lo que se traduce al español como «Soporte a Largo Plazo»
+desventaja de NodeJS lts solo se instala una sola version.
+*el instalador NVM  manejador de versiones de node.js compatible con diferentes plataformas.
+*FNM (fast and simple node.js version version manager,,build in Rust), se debe de ejecutar Rust* [(https://github.com/Schniz/fnm)]
         instalar rust => 
 ### 19:05 Tus Primeros pasos con NODE JS
 ### 
 ### 21:27 Hola mundo y ejecutar ficheros 
 ###     
 ### 23:15 Variables Globales
-        no existe la variable global de window, al ejecutarlo solo muestra not defined
-        se ocupa la  GlobalThis para poder llamar a variables globales desde cualquier parte.
-        de hecho console.log();, es parte de globalThis, no es una variable global.
-        todo sale de GlobalThis.
-        La globalThis propiedad global contiene el valor globalthis , que suele ser similar al objeto global .
+no existe la variable global de window, al ejecutarlo solo muestra not defined
+se ocupa la  GlobalThis para poder llamar a variables globales desde cualquier parte.
+de hecho console.log();, es parte de globalThis, no es una variable global.
+todo sale de GlobalThis.
+La globalThis propiedad global contiene el valor globalthis , que suele ser similar al objeto global .
 ### 25:30 Window VS GlobalThis
-        La globalThispropiedad global contiene el valor globalthis , que suele ser similar al objeto global .
+La globalThispropiedad global contiene el valor globalthis , que suele ser similar al objeto global .
 ### 26:45 El Console.log
-        todo sale de la variable
-        `globalThis.console.log('Starting');`
+todo sale de la variable
+`globalThis.console.log('Starting');`
 ### 28:19 Patrón de Diseño Módulo
-        En node.js nunca se tendra todo el codigo en un solo fichero, no tiene sentido
-        ### _sistema clasico de commonJS_
-        para poder exportar los modulos ocupamos: 
-        ~~~~
+En node.js nunca se tendra todo el codigo en un solo fichero, no tiene sentido
+##### _sistema clasico de commonJS_
+para poder exportar los modulos ocupamos: 
+```js
         function Suma(a, b){
          return a+b;
         }
         //estamos exportando el modulo Suma
         module.exports =  Suma;
-        ~~~~
-        _tambien estamos importando el modulo suma en index.js
-        ~~~
+```
+*tambien estamos importando el modulo suma en index.js*
+```js
         //estamos realizando la conexion con el modulo Suma
         const  Suma = require('./suma');
         console.log(Suma(8,12));
-        ~~~
-        tambien se puede colocar el nombre que quieras por ejemplo
-        ~~~
+```
+*__tambien se puede colocar el nombre que quieras por ejemplo__*
+```js
         //estamos realizando la conexion con el modulo Suma
         const  ElnombreQueQuieras = require('./suma');
         console.log(ElnombreQueQuieras(8,12));
-        ~~~
-        _sin embargo para evitarnos los errores de sintaxis es recomedable por ocuparlo lo siguiente:
-        ~~~
-        
+```
+__sin embargo para evitarnos los errores de sintaxis es recomedable por ocuparlo lo siguiente:__
+```js
         function Resta(a, b){
         return a-b;
         }
         //forzando ocupar el mismo nombre de  la funcion
         module.exports = {
         Resta
-        }~~~
-        _para realizar la importacion_
-        ~~~
+        }
+```
+__para realizar la importacion__
+```js
         /*otra forma segura de poder crear 
         forma forzando el uso de del nombre de la funcion */
         la conexion con el modulo de esta 
         const {Resta}=require('./suma');
         console.log(Resta(20, 5));
-        ~~~
-        _para poder crear la forma actual, moder no y recomendado de poder exportar modulo_ usando el nombre de archivo _archivo.mjs_
-        ~~~
+```
+_para poder crear la forma actual, moder no y recomendado de poder exportar modulo_ usando el nombre de archivo archivo.mjs_
+```js
         //forma actual de poder exportar funciones haciendo referencia a 'export' 
         export function Suma(a, b){
             return a+b;
@@ -81,14 +81,14 @@
         export function Resta(a, b){
             return a-b;
         }
-        ~~~
+```
         _ forma de poder importar modulo_
-        ~~~
+```js
         //forma actual, recomendado de poder importar funciones
         import {Suma, Resta} from './suma.mjs' 
         console.log(Suma(18, 2));
         console.log(Resta(20,5));
-        ~~~
+```
 ### 29:54 Sistema de Módulos CommonJS
         
 ### 32:30 Sistema de Módulos ES Modules
@@ -131,9 +131,6 @@
 ### 2:07:00 Segunda Aplicación
 ### 2:13:57 Variables de entorno
 ### 2:15:11 .env?
- 
-
-
 
 
 
